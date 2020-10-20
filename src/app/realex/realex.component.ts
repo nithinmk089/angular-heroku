@@ -135,8 +135,8 @@ export class RealexComponent implements OnInit {
 
   recurringPayment() {
     var xmlBody = "";
-    this.http.get("https://localhost:3000/api/realex/get").subscribe(function(response) { 
-      this.merchantInfo = response;
+    //this.http.get("https://localhost:3000/api/realex/get").subscribe(function(response) { 
+      this.merchantInfo = {data : { merchantid : "dev9810090608698918651", sharedsecret : "qo5wjnot6S"}};
       var MERCHANT_ID = this.merchantInfo.data.merchantid;
       var SharedSecret = this.merchantInfo.data.sharedsecret;
       var CURRENCY = "";
@@ -212,13 +212,13 @@ export class RealexComponent implements OnInit {
                 '</request>';
       console.log(xmlBody);
       
-    });
+   // });
     this.createUser(xmlBody);
     //Step 1 - Create User in RealEx
 
   }
   createUser(xmlData){
-    this.http.post<any>('https://api.sandbox.realexpayments.com/epage-remote.cgi', xmlData, this.requestOptions).subscribe(data => {
+    this.http.post<any>('https://api.sandbox.realexpayments.com/epage-remote.cgi', xmlData).subscribe(data => {
       let result1 = converter.xml2json(data, {compact: true, spaces: 2});
       const JSONData = JSON.parse(result1);
       console.log(JSONData);
