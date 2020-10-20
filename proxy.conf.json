@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "`https://api.sandbox.realexpayments.com`",
+        "secure": false
+    }
+}
