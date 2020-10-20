@@ -30,10 +30,9 @@ export class RealexComponent implements OnInit {
   }
 
   headerDict = {
-    'Content-Type': 'text/plain',
-    'Accept': '*/*',
-  //  'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Origin': '*'
+    'Access-Control-Allow-Origin':  "https://angular-payment-test.herokuapp.com/",
+    'Access-Control-Allow-Methods': 'POST',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
   }
   
   requestOptions = {                                                                                                                                                                                 
