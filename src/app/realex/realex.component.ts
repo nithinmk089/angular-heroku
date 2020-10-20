@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as sha1 from 'js-sha1';
@@ -14,6 +14,7 @@ export class RealexComponent implements OnInit {
 
   paymentStatus : string;
   merchantInfo: any;
+  
   constructor(private http: HttpClient,private route: ActivatedRoute) { 
     this.route.queryParams.subscribe(param => {
       if (Object.keys(param).length) {
@@ -27,6 +28,17 @@ export class RealexComponent implements OnInit {
       }
   });
   }
+
+  headerDict = {
+    'Content-Type': 'text/plain',
+    'Accept': '*/*',
+  //  'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Origin: *'
+  }
+  
+  requestOptions = {                                                                                                                                                                                 
+    headers: new HttpHeaders(this.headerDict), 
+  };
 
   ngOnInit(): void {
   }
@@ -206,7 +218,7 @@ export class RealexComponent implements OnInit {
 
   }
   createUser(xmlData){
-    this.http.post<any>('https://api.sandbox.realexpayments.com/epage-remote.cgi', xmlData).subscribe(data => {
+    this.http.post<any>('https://api.sandbox.realexpayments.com/epage-remote.cgi', xmlData, this.requestOptions).subscribe(data => {
       let result1 = converter.xml2json(data, {compact: true, spaces: 2});
       const JSONData = JSON.parse(result1);
       console.log(JSONData);
