@@ -33,7 +33,7 @@ export class RealexComponent implements OnInit {
     'Content-Type': 'text/plain',
     'Accept': '*/*',
   //  'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Origin: *'
+    'Access-Control-Allow-Origin': '*'
   }
   
   requestOptions = {                                                                                                                                                                                 
