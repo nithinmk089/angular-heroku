@@ -94,7 +94,7 @@ export class RealexComponent implements OnInit {
       VAR_REF:"Acme Corporation",
       PROD_ID:"SKU1000054",
       // End Fraud Management and Reconciliation Fields -->
-      MERCHANT_RESPONSE_URL:"https://mynodetester.herokuapp.com/api/realex/confirm",
+      MERCHANT_RESPONSE_URL:"https://mynodetester.herokuapp.com/realex",
       CARD_PAYMENT_BUTTON:"Pay Invoice",
       CUSTOM_FIELD_NAME:"",
       PAYER_REF : PAYER_REF,
