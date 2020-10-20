@@ -218,9 +218,9 @@ export class RealexComponent implements OnInit {
   }
   createUser(xmlData){
     this.http.post<any>('https://api.sandbox.realexpayments.com/epage-remote.cgi', xmlData, this.requestOptions).subscribe(data => {
-      let result1 = converter.xml2json(data, {compact: true, spaces: 2});
-      const JSONData = JSON.parse(result1);
-      console.log(JSONData);
+      //let result1 = converter.xml2json(data, {compact: true, spaces: 2});
+      //const JSONData = JSON.parse(result1);
+      console.log(data);
     });
     return;
   }
