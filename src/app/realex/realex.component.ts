@@ -135,7 +135,7 @@ export class RealexComponent implements OnInit {
   recurringPayment() {
     var xmlBody = "";
     //this.http.get("https://localhost:3000/api/realex/get").subscribe(function(response) { 
-      this.merchantInfo = {data : { merchantid : "dev9810090608698918651", sharedsecret : "qo5wjnot6S"}};
+      this.merchantInfo = {data : { merchantid : "oshomedia", sharedsecret : "o9Ems7WJ8o"}};
       var MERCHANT_ID = this.merchantInfo.data.merchantid;
       var SharedSecret = this.merchantInfo.data.sharedsecret;
       var CURRENCY = "";
